@@ -143,7 +143,7 @@ class ElasticsearchSearchBackend(BaseSearchBackend):
 
         self.setup_complete = True
 
-    def update(self, index, iterable, commit=True, upsert=False):
+    def update(self, index, iterable, commit=False, upsert=True): # commit default is actually True!
         if not self.setup_complete:
             try:
                 self.setup()
